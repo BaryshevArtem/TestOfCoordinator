@@ -21,15 +21,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        // Генерация данных
         val items = List(100) { "Item #$it" }
         adapter = ItemAdapter()
+
+        setSupportActionBar(findViewById(R.id.toolbar))
 
         recyclerView = findViewById(R.id.recycler_view)
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter
 
-        // Обновление списка
         adapter.submitList(items)
     }
 }
